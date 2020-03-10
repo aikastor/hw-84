@@ -12,15 +12,15 @@ app.use(cors());
 
 const run = async () => {
   await mongoose.connect('mongodb://localhost/tasks', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   });
   app.use('/', controllers);
   app.listen(port, ()=> {
-      console.log(`HTTP Server started on ${port} port!`);
+    console.log(`HTTP Server started on ${port} port!`);
   })
 };
 run().catch(e => {
-    console.error(e);
+  console.error(e);
 });
