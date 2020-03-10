@@ -15,12 +15,14 @@ const run = async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+    useFindAndModify: false
   });
   app.use('/', controllers);
   app.listen(port, ()=> {
     console.log(`HTTP Server started on ${port} port!`);
   })
 };
+
 run().catch(e => {
   console.error(e);
 });
